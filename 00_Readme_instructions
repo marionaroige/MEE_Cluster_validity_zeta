@@ -1,0 +1,16 @@
+####################################################
+# Mariona Roigé Valiente, 2016                     #
+# Ecological Informatics, BPRC, Lincoln University #              			  
+# mariona.roige.valiente@gmail.com       	   #
+####################################################
+
+01_Script_SOM_Matlab_generic.m : contains a script to automatically run Self Organizing maps in Matlab using SOMToolbox (more description needed). The output of 01 is the file 'cells.csv'.
+
+02_compute_zetas.R : R script that imports the original data ('dataclean2006.txt') and matches the results of 'cells.csv' with the occurrence data in 'dataclean2006.txt', creates data.frames for each of the clusters and applies the zeta computation to each one of the clusters. Outputs a workspace called 'zetavalues.RData'.
+
+03_extract_zetas.R: R script that imports 'zetavalues.RData' and extracts the important parts from the lists and coerces them all into one table (data.frame) with all the values of zeta (1 to zmax) for all the cells of the SOM (1 to ncell). It also generates a table (data.frame) with the normalized values of zeta. Output is a workspace called 'extractedzetas.RData'
+
+04_select_clusters.R: R script that impots 'extractedzetas.RData' and selects the clusters depending on their zeta values. The criteria is to ditch the worse quartile for each zeta order. Outputs a workspace called 'selectedzetas.RData'.
+
+05_plot_zetas.R: R script that imports 'extractedzetas.RData' and uses the values to plot coloured SOM maps according to their zeta values. Some optionalities have been built so that it can also plot variations of the SOM map. 
+
