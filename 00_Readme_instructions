@@ -14,3 +14,4 @@
 
 05_plot_zetas.R: R script that imports 'extractedzetas.RData' and uses the values to plot coloured SOM maps according to their zeta values. Some optionalities have been built so that it can also plot variations of the SOM map. 
 
+Test
